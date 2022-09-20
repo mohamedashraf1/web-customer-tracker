@@ -25,6 +25,15 @@
 		<h3>Save Customer</h3>
 		
 		<form:form action="saveCustomer" modelAttribute="customer" method="POST">
+		
+			<!-- need to associate this data with customer id -->
+			<!-- 
+			when form is loaded customer.getId() is called so i have the id of the object
+			when form is submitted customer.setId() is called with the same id
+			so it update the record instead of just creating a new one	
+			-->
+			<form:hidden path="id"/>
+			
 			<table>
 				<tbody>
 					<tr>
