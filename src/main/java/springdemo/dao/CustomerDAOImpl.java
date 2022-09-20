@@ -12,6 +12,11 @@ import org.hibernate.SessionFactory;
 
 import springdemo.entity.Customer;
 
+
+// @Repository Annotation is a specialization of @Component annotation
+// which is used to indicate that the class provides the mechanism for
+// storage, retrieval, update, delete and search operation on objects.
+// ......
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
 
@@ -20,9 +25,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	private SessionFactory sessionFactory;
 	
 	
-	// @Transactional mean that spring will handle session opening and closing
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
 		// get the current hibernate session 
 		Session currentSession = sessionFactory.getCurrentSession();
